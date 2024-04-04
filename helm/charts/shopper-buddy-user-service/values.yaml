@@ -14,11 +14,10 @@ servicePort: 80
 
 clusterIssuer: letsencrypt-prod
 
-
 subdomains: substituted-from-pipeline
 
 database:
-  appOwnerSecretName: "shopper-buddy-prod-owner-connection"
+  appOwnerSecretName: "shopper-buddy-users-prod-owner-connection"
 
 googleKubernetesSecretName: {{ .Release.Name }}-google-oauth2
 google_oauth2_client_id: substituted-by-pipeline
