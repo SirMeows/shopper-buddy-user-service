@@ -108,7 +108,7 @@ jobs:
 
       - uses: microsoft/variable-substitution@v1
         with:
-          files: 'helm/charts/shopper-buddy/Chart.yaml, helm/charts/shopper-buddy/values.yaml'
+          files: 'helm/charts/shopper-buddy-user-service/Chart.yaml, helm/charts/shopper-buddy-user-service/values.yaml'
         env:
           subdomains: ${{ vars.DOMAINS }}
           #subdomains: "example.org,example.com,example.eu"
@@ -119,7 +119,6 @@ jobs:
           image.tag: ${{ env.LATEST_TAG }}
           google.googleClientID: ${{ secrets.GOOGLE_OAUTH2_CLIENT_ID }}
           google.googleClientSecret: ${{ secrets.GOOGLE_OAUTH2_CLIENT_SECRET }}
-
 
       # Deploying the application
       - name: 'Deploy to AKS'
