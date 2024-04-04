@@ -1,0 +1,25 @@
+replicaCount: 1
+
+appVersion: substituted-from-pipeline
+
+image:
+  migrationsRepository: substituted-from-pipeline
+  repository: substituted-from-pipeline
+  tag: substituted-from-pipeline
+  pullPolicy: IfNotPresent
+
+containerPort: 8080
+serviceType: ClusterIP
+servicePort: 80
+
+clusterIssuer: letsencrypt-prod
+
+
+subdomains: substituted-from-pipeline
+
+database:
+  appOwnerSecretName: "shopper-buddy-prod-owner-connection"
+
+googleKubernetesSecretName: {{ .Release.Name }}-google-oauth2
+google_oauth2_client_id: substituted-by-pipeline
+google_oauth2_secret: substituted-by-pipeline
